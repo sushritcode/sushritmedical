@@ -78,7 +78,7 @@ div.tiny { width:1px; height:1px; font-size:1px; }
  }
 #bigCal {
     overflow: hidden;
-    background-color: #FFF3D1;
+    background-color: #bbccff;
     border-left:1px solid black;
 }
 
@@ -179,7 +179,7 @@ div.tiny { width:1px; height:1px; font-size:1px; }
 #times {
 	border-right: 1px solid #999;
     width: 2em;
-    background-color: #FFF3D1;
+    background-color: #bbccff;
     padding: 0px;
 }
 #times table {
@@ -188,7 +188,7 @@ div.tiny { width:1px; height:1px; font-size:1px; }
     margin: 0px;
     padding: 0px;
     background-color: #E7D294;
-    background-color: #FFF3D1;
+    background-color: #bbccff;
 }
 #times table td {
     border-bottom: 1px solid #999;
@@ -205,7 +205,7 @@ div.tiny { width:1px; height:1px; font-size:1px; }
     padding: 0px;
 }
 .schedule {
-    background-color: #FFF3D1;
+    background-color: #bbccff;
     background-color: #FFF;
     vertical-align: top;
     padding: 0px;
