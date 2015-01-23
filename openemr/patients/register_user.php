@@ -179,7 +179,7 @@
         ?>
       <div id="wrapper" class="centerwrapperRegistration">
         <h2 class="title"><?php echo htmlspecialchars( xl('Please Enter a New Password'), ENT_NOQUOTES); ?></h2>
-        <form action="get_patient_info.php" method="POST" onsubmit="return process_new_pass()" >
+        <form action="#" method="POST" onsubmit="return process_new_pass()" >
             <table>
                 <tr>
                     <td class="algnRight"><?php echo htmlspecialchars( xl('User Name'), ENT_NOQUOTES); ?></td>
@@ -285,6 +285,29 @@
 				  </td>
 				</tr>
 				<tr>
+				   <td class="algnRight" >Sex</td>
+		    		   <td>
+				<table width="100%">
+				<tr>
+					<td colspan=2>
+						<table width="100%">
+                                                <tr>
+                                                        <td>
+                                                                <input name="sex" type="radio" autocomplete="off" /> Male
+                                                        </td>
+                                                        <td>
+                                                                <input name="sex" id="pass" type="radio" autocomplete="off" /> Female
+                                                        </td>
+                                                </tr>
+                                        </table>
+
+					</td>
+				</tr>
+				</table>
+				  </td>
+				</tr>
+
+				<tr>
 				   <td class="algnRight" >Date Of Birth</td>
 		    		   <td>
 					<table width="100%">	
@@ -341,6 +364,11 @@
 				   <td class="algnRight" >Hips</td>
 		    		   <td><input name="uname" id="uname" type="text" autocomplete="off" /> cms.</td>
 				</tr>
+				<tr>
+				   <td class="algnRight" >BMI (Body Mass Index)</td>
+		    		   <td><input name="uname" id="uname" type="text" autocomplete="off" /> kg / m <sup>2</sup></td>
+				</tr>
+
 			</table>
 		    </td>
 		</tr>
@@ -348,67 +376,167 @@
 		    <td class="algnRight" colspan="2" align="center">
 			<table width="100%">
 				<tr>
-				   <td colspan="2"><h4>Medical History</h4></td>
+				   <td colspan="2"><h4>Consumptions</h4></td>
 				</tr>
 				<tr>
-				   <td class="algnRight" >Diagnosed Heart Attack</td>
+				   <td class="algnRight" >How healthy do you generally consider your diet to be? </td>
+		    		   <td><table width="100%">
+						<tr>
+							<td>
+								<input name="diet" type="radio" autocomplete="off" /> Healty
+							</td>
+							<td>
+								<input name="diet" id="pass" type="radio" autocomplete="off" /> Not Healthy
+							</td>
+						</tr>
+					</table>
+				  </td>
+				</tr>
+
+				<tr>
+				   <td class="algnRight" >How often do you eat sugary foods ?  </td>
+		    		   <td><table width="100%">
+						<tr>
+							<td>
+								<input name="sugar" type="radio" autocomplete="off" /> Daily
+							</td>
+							<td>
+								<input name="sugar" id="pass" type="radio" autocomplete="off" /> Occasionally
+							</td>
+						</tr>
+					</table>
+				  </td>
+				</tr>
+
+				<tr>
+				   <td class="algnRight" >Do you eat vegetable(s) and fruit(s) daily ?</td>
+		    		   <td><table width="100%">
+						<tr>
+							<td>
+								<input name="veg" type="radio" autocomplete="off" /> Yes 
+							</td>
+							<td>
+								<input name="veg" id="pass" type="radio" autocomplete="off" /> No
+							</td>
+						</tr>
+					</table>
+				  </td>
+				</tr>
+
+				<tr>
+				   <td class="algnRight" >Do you have a drink containing alcohol ?</td>
+		    		   <td><table width="100%">
+						<tr>
+							<td>
+								<input name="alchohol" type="radio" autocomplete="off" /> Yes 
+							</td>
+							<td>
+								<input name="alchohol" id="pass" type="radio" autocomplete="off" /> No
+							</td>
+						</tr>
+					</table>
+				  </td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Do you Smoke habitually ?</td>
+		    		   <td><table width="100%">
+						<tr>
+							<td>
+								<input name="smoke" type="radio" autocomplete="off" /> Yes 
+							</td>
+							<td>
+								<input name="smoke" id="pass" type="radio" autocomplete="off" /> No
+							</td>
+						</tr>
+					</table>
+				  </td>
+				</tr>
+
+			</table>
+		     </td>
+		</tr>
+
+		<tr>
+		    <td class="algnRight" colspan="2" align="center">
+			<table width="100%">
+				<tr>
+				   <td colspan="2"><h4>Medical Conditions</h4></td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Do you suffer from tiredness in the day time ?</td>
 		    		   <td><table width="100%">
 				<tr>
 					<td>
-			<input name="sex" type="radio" autocomplete="off" /> Yes 
+			<input name="sex96" type="radio" autocomplete="off" /> Yes 
 					</td>
 					<td>
-			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+			<input name="sex96" id="pass" type="radio" autocomplete="off" /> No
+					</td>
+				</tr>
+			</table>
+		     </td>
+		</tr>
+
+				<tr>
+				   <td class="algnRight" >Do you suffer from sleep disorders ?</td>
+		    		   <td><table width="100%">
+				<tr>
+					<td>
+			<input name="sex97" type="radio" autocomplete="off" /> Yes 
+					</td>
+					<td>
+			<input name="sex97" id="pass" type="radio" autocomplete="off" /> No
+					</td>
+				</tr>
+			</table>
+		     </td>
+		</tr>
+
+				<tr>
+				   <td class="algnRight" >Ever had any first degree relatives diagnosed
+with angina, heart disease or stroke?</td>
+		    		   <td><table width="100%">
+				<tr>
+					<td>
+			<input name="sex98" type="radio" autocomplete="off" /> Yes 
+					</td>
+					<td>
+			<input name="sex98" id="pass" type="radio" autocomplete="off" /> No
 					</td>
 				</tr>
 			</table>
 		     </td>
 		</tr>
 				<tr>
-				   <td class="algnRight" >Diagnosed High blood pressure</td>
+				   <td class="algnRight" >Father/brother/son under 55 years of age diagnosed :
+with angina, heart disease or stroke?</td>
 		    		   		    		   <td><table width="100%">
 				<tr>
 					<td>
-			<input name="sex" type="radio" autocomplete="off" /> Yes 
+			<input name="sex99" type="radio" autocomplete="off" /> Yes 
 					</td>
 					<td>
-			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+			<input name="sex99" id="pass" type="radio" autocomplete="off" /> No
 					</td>
 				</tr>
 			</table>
 		     </td>
 				</tr>
 				<tr>
-				   <td class="algnRight" >Diagnosed High cholesterol</td>
+				   <td class="algnRight" >Mother/sister/daughter under 65 years of age diagnosed :
+with angina, heart disease or stroke?</td>
 		    		   	    		   <td><table width="100%">
 				<tr>
 					<td>
-			<input name="sex" type="radio" autocomplete="off" /> Yes 
+			<input name="sex100" type="radio" autocomplete="off" /> Yes 
 					</td>
 					<td>
-			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+			<input name="sex100" id="pass" type="radio" autocomplete="off" /> No
 					</td>
 				</tr>
 			</table>
 		     </td>
 				</tr>
-				<tr>
-				   <td class="algnRight" >Diagnosed diabetes</td>
-		    		   	    		   <td><table width="100%">
-				<tr>
-					<td>
-			<input name="sex" type="radio" autocomplete="off" /> Yes 
-					</td>
-					<td>
-			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
-					</td>
-				</tr>
-			</table>
-		     </td>
-				</tr>
-			</table>
-		    </td>
-		</tr>
 
 
 		<tr>
