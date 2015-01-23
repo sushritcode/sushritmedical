@@ -210,9 +210,9 @@ $ip=$_SERVER['REMOTE_ADDR'];
 
 </div>
 <div style="clear: both;"> </div>
-<div class="version">
+<!--div class="version">
 <?php echo "v".text($openemr_version) ?> | <a  href="../../acknowledge_license_cert.html" target="main"><?php echo xlt('Acknowledgments, Licensing and Certification'); ?></a>
-</div>
+</div-->
 </div>
 <div class="demo">
 		<!-- Uncomment this for the OpenEMR demo installation
