@@ -209,7 +209,7 @@
             </table>
         </form>
 
-        <div class="copyright"><?php echo htmlspecialchars( xl('Powered by'), ENT_NOQUOTES);?> OpenEMR</div>
+        <div class="copyright"><?php echo htmlspecialchars( xl('Powered by'), ENT_NOQUOTES);?> HealthPin</div>
       </div>
     <?php } else { ?>
       <div id="wrapper" class="centerwrapper">
@@ -260,7 +260,7 @@
             <?php if (!(empty($hiddenLanguageField))) echo $hiddenLanguageField; ?>
 	</form>
     
-        <div class="copyright"><?php echo htmlspecialchars( xl('Powered by'), ENT_NOQUOTES);?> OpenEMR</div>
+        <div class="copyright"><?php echo htmlspecialchars( xl('Powered by'), ENT_NOQUOTES);?> HealthPin</div>
       </div>
     <?php } ?>
 
