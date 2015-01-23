@@ -39,7 +39,7 @@
     // Deal with language selection
     //
     // collect default language id (skip this if this is a password update)
-    if (!(isset($_SESSION['password_update']))) {
+    /*if (!(isset($_SESSION['password_update']))) {
       $res2 = sqlStatement("select * from lang_languages where lang_description = ?", array($GLOBALS['language_default']) );
       for ($iter = 0;$row = sqlFetchArray($res2);$iter++) {
         $result2[$iter] = $row;
@@ -86,13 +86,13 @@
       else {
         $hiddenLanguageField = "<input type='hidden' name='languageChoice' value='".htmlspecialchars($defaultLangID,ENT_QUOTES)."' />\n";
       }
-    }
+    }*/
 
 ?>
 
 <html>
 <head>
-    <title><?php echo xlt('User Portal Login'); ?></title>
+    <title><?php echo xlt('User Portal Registration'); ?></title>
 
     <script type="text/javascript" src="../library/js/jquery-1.5.js"></script>
     <script type="text/javascript" src="../library/js/jquery.gritter.min.js"></script>
@@ -177,7 +177,7 @@
     <?php if (isset($_SESSION['password_update'])||isset($_GET['password_update'])) { 
         $_SESSION['password_update']=1;
         ?>
-      <div id="wrapper" class="centerwrapper">
+      <div id="wrapper" class="centerwrapperRegistration">
         <h2 class="title"><?php echo htmlspecialchars( xl('Please Enter a New Password'), ENT_NOQUOTES); ?></h2>
         <form action="get_patient_info.php" method="POST" onsubmit="return process_new_pass()" >
             <table>
@@ -212,50 +212,207 @@
         <div class="copyright"><?php echo htmlspecialchars( xl('Powered by'), ENT_NOQUOTES);?> HealthPin</div>
       </div>
     <?php } else { ?>
-      <div id="wrapper" class="centerwrapper">
-	<h2 class="title"><?php echo htmlspecialchars( xl('User	Portal Login'), ENT_NOQUOTES); ?></h2>
+      <div id="wrapperRegistration" class="centerwrapperRegistration">
+	<h2 class="title"><?php echo htmlspecialchars( xl('User	Portal Registration'), ENT_NOQUOTES); ?></h2>
 	<form action="get_patient_info.php" method="POST" onsubmit="return process()" >
 	    <table>
 		<tr>
-		    <td class="algnRight"><?php echo htmlspecialchars( xl('User Name'), ENT_NOQUOTES); ?></td>
-		    <td><input name="uname" id="uname" type="text" autocomplete="off" /></td>
+		    <td class="algnRight" colspan="2" align="center">
+			<table width="100%">
+				<tr>
+				   <td colspan="2"><h4>Portal Login Information</h4></td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Email Address<sup>*</sup></td>
+		    		   <td>
+					<table width="100%">
+					<tr>
+						<td colspan=2><input name="uname" id="uname" type="text" autocomplete="off" />	</td>
+					</tr>
+					</table>
+				   </td>
+				</tr>
+
+				<tr>
+				   <td class="algnRight" >User Name<sup>*</sup></td>
+		    		   <td>
+				<table width="100%">
+				<tr>
+					<td colspan=2><input name="uname" id="uname" type="text" autocomplete="off" />	</td>
+				</tr>
+				</table>
+				  </td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Password<sup>*</sup></td>
+		    		   <td>
+					<table width="100%">	
+					<tr>
+						<td colspan=2><input name="uname" id="uname" type="password" autocomplete="off" />	</td>
+					</tr>
+					</table>
+				    </td>
+				</tr>
+				
+				<tr>
+				   <td class="algnRight" >Confirm Password<sup>*</sup></td>
+		    		   <td>
+					<table width="100%">
+					<tr>
+						<td colspan=2><input name="uname" id="uname" type="password" autocomplete="off" />	</td>
+					</tr>
+					</table>
+				   </td>
+				</tr>	
+							</table>
+		     </td>
+		</tr>
+
+		<tr>
+		    <td class="algnRight" colspan="2" align="center">
+			<table width="100%">
+				<tr>
+				   <td colspan="2"><h4>Personnel Information</h4></td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Name</td>
+		    		   <td>
+				<table width="100%">
+				<tr>
+					<td colspan=2><input name="uname" id="uname" type="text" autocomplete="off" />	</td>
+				</tr>
+				</table>
+				  </td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Date Of Birth</td>
+		    		   <td>
+					<table width="100%">	
+					<tr>
+						<td colspan=2><input name="uname" id="uname" type="text" autocomplete="off" />	</td>
+					</tr>
+					</table>
+				    </td>
+				</tr>
+				
+				<tr>
+				   <td class="algnRight" >Father's Ethnicity</td>
+		    		   <td>
+					<table width="100%">
+					<tr>
+						<td colspan=2><input name="uname" id="uname" type="text" autocomplete="off" />	</td>
+					</tr>
+					</table>
+				   </td>
+				</tr>	
+				<tr>
+				   <td class="algnRight" >Mother's Ethnicity</td>
+		    		   <td>
+					<table width="100%">
+					<tr>
+						<td colspan=2><input name="uname" id="uname" type="text" autocomplete="off" />	</td>
+					</tr>
+					</table>
+				   </td>
+				</tr>
+			</table>
+		     </td>
+		</tr>
+
+		<tr>
+		    <td class="algnRight" colspan="2" align="center">
+			<table width="100%">
+				<tr>
+				   <td colspan="2"><h4> Measurements</h4></td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Height</td>
+		    		   <td><input name="uname" id="uname" type="text" autocomplete="off" /> cms.</td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Waist</td>
+		    		   <td><input name="uname" id="uname" type="text" autocomplete="off" /> cms.</td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Weight</td>
+		    		   <td><input name="uname" id="uname" type="text" autocomplete="off" /> Kgs.</td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Hips</td>
+		    		   <td><input name="uname" id="uname" type="text" autocomplete="off" /> cms.</td>
+				</tr>
+			</table>
+		    </td>
 		</tr>
 		<tr>
-		    <td class="algnRight"><?php echo htmlspecialchars( xl('Password'), ENT_NOQUOTES);?></>
-		    <td>
-			<input name="pass" id="pass" type="password" autocomplete="off" />
+		    <td class="algnRight" colspan="2" align="center">
+			<table width="100%">
+				<tr>
+				   <td colspan="2"><h4>Medical History</h4></td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Diagnosed Heart Attack</td>
+		    		   <td><table width="100%">
+				<tr>
+					<td>
+			<input name="sex" type="radio" autocomplete="off" /> Yes 
+					</td>
+					<td>
+			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+					</td>
+				</tr>
+			</table>
+		     </td>
+		</tr>
+				<tr>
+				   <td class="algnRight" >Diagnosed High blood pressure</td>
+		    		   		    		   <td><table width="100%">
+				<tr>
+					<td>
+			<input name="sex" type="radio" autocomplete="off" /> Yes 
+					</td>
+					<td>
+			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+					</td>
+				</tr>
+			</table>
+		     </td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Diagnosed High cholesterol</td>
+		    		   	    		   <td><table width="100%">
+				<tr>
+					<td>
+			<input name="sex" type="radio" autocomplete="off" /> Yes 
+					</td>
+					<td>
+			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+					</td>
+				</tr>
+			</table>
+		     </td>
+				</tr>
+				<tr>
+				   <td class="algnRight" >Diagnosed diabetes</td>
+		    		   	    		   <td><table width="100%">
+				<tr>
+					<td>
+			<input name="sex" type="radio" autocomplete="off" /> Yes 
+					</td>
+					<td>
+			<input name="sex" id="pass" type="radio" autocomplete="off" /> No
+					</td>
+				</tr>
+			</table>
+		     </td>
+				</tr>
+			</table>
 		    </td>
 		</tr>
 
-                <?php if ($GLOBALS['language_menu_login']) { ?>
-                 <?php if (count($result3) != 1) { ?>
-                  <!--tr>
-                    <td><span class="text"><?php echo htmlspecialchars( xl('Language'), ENT_NOQUOTES); ?></span></td>
-                    <td>
-                        <select name=languageChoice size="1">
-                            <?php
-                            echo "<option selected='selected' value='".htmlspecialchars($defaultLangID,ENT_QUOTES)."'>" . htmlspecialchars( xl('Default') . " - " . xl($defaultLangName), ENT_NOQUOTES) . "</option>\n";
-                            foreach ($result3 as $iter) {
-                                if ($GLOBALS['language_menu_showall']) {
-                                    if ( !$GLOBALS['allow_debug_language'] && $iter[lang_description] == 'dummy') continue; // skip the dummy language
-                                    echo "<option value='".htmlspecialchars($iter[lang_id],ENT_QUOTES)."'>".htmlspecialchars($iter[trans_lang_description],ENT_NOQUOTES)."</option>\n";
-                                }
-                                else {
-                                    if (in_array($iter[lang_description], $GLOBALS['language_menu_show'])) {
-                                        if ( !$GLOBALS['allow_debug_language'] && $iter[lang_description] == 'dummy') continue; // skip the dummy language
-                                        echo "<option value='".htmlspecialchars($iter[lang_id],ENT_QUOTES)."'>".htmlspecialchars($iter[trans_lang_description],ENT_NOQUOTES)."</option>\n";
-                                    }
-                                }
-                            }
-                            ?>
-                        </select>
-                    </td>
-                  </tr-->
-                <?php }} ?>
 
 		<tr>
-		    <td><br><center><a  href="register_user.php" target="main"><input type="button" value="<?php echo htmlspecialchars( xl('Register'), ENT_QUOTES);?>" /></center></td>
-		    <td><br><center><input type="submit" value="<?php echo htmlspecialchars( xl('Log In'), ENT_QUOTES);?>" /></center></td>
+		    <td colspan=2 align="right"><br><input type="submit" value="<?php echo htmlspecialchars( xl('Register Now'), ENT_QUOTES);?>" /></td>
 		</tr>
 	    </table>
             <?php if (!(empty($hiddenLanguageField))) echo $hiddenLanguageField; ?>
