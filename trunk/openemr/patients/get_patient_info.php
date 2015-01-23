@@ -47,7 +47,7 @@
     //
 
     //Authentication (and language setting)
-	require_once('../interface/globals.php');
+    require_once('../interface/globals.php');
     require_once("$srcdir/authentication/common_operations.php");        
     $password_update=isset($_SESSION['password_update']);
     unset($_SESSION['password_update']);
